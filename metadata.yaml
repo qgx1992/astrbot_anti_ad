@@ -1,0 +1,13 @@
+name: astrbot_anti_ad
+author: qgx1992
+desc: AstrBot 群聊反广告插件，支持链接检测、广告关键词检测、自动撤回、累计警告和达到次数后禁言。
+short_desc: 发链接/广告自动警告
+display_name: 反广告自动警告
+version: 1.0.0
+repo: https://github.com/qgx1992/astrbot_anti_ad
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
+  - satori
+astrbot_version: ">=4.16,<5"

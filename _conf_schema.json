@@ -1,0 +1,96 @@
+{
+  "enabled": {
+    "description": "启用插件",
+    "type": "bool",
+    "hint": "关闭后不再检测群消息。",
+    "default": true
+  },
+  "group_whitelist": {
+    "description": "群白名单",
+    "type": "list",
+    "hint": "只有列表中的群会启用反广告；留空表示所有群生效。",
+    "default": [],
+    "items": {"type": "string"}
+  },
+  "user_whitelist": {
+    "description": "用户白名单",
+    "type": "list",
+    "hint": "白名单 QQ 号不检测，适合加入机器人、管理员或可信用户。",
+    "default": [],
+    "items": {"type": "string"}
+  },
+  "ignore_admin": {
+    "description": "忽略群主/管理员",
+    "type": "bool",
+    "hint": "开启后群主和管理员发链接/广告不会被处理。",
+    "default": true
+  },
+  "detect_links": {
+    "description": "检测链接",
+    "type": "bool",
+    "hint": "检测 http、https、www 和常见域名格式。",
+    "default": true
+  },
+  "detect_keywords": {
+    "description": "检测广告关键词",
+    "type": "bool",
+    "hint": "检测加群、私聊、微信、兼职、返利、代充、推广等广告词。",
+    "default": true
+  },
+  "custom_keywords": {
+    "description": "自定义广告关键词",
+    "type": "list",
+    "hint": "命中这里的词也会警告，例如：低价金币、卖号、工作室。",
+    "default": [],
+    "items": {"type": "string"}
+  },
+  "allowed_domains": {
+    "description": "允许的域名",
+    "type": "list",
+    "hint": "这些域名的链接不会被拦截，例如：example.com。支持子域名放行。",
+    "default": [],
+    "items": {"type": "string"}
+  },
+  "warning_limit": {
+    "description": "警告上限",
+    "type": "int",
+    "hint": "累计达到该次数后，如果开启禁言，会尝试禁言。",
+    "default": 3
+  },
+  "warning_reset_seconds": {
+    "description": "警告重置时间（秒）",
+    "type": "int",
+    "hint": "超过这个时间未违规，下一次重新从 1 次开始。默认 86400 秒即 24 小时。",
+    "default": 86400
+  },
+  "recall_message": {
+    "description": "自动撤回违规消息",
+    "type": "bool",
+    "hint": "需要 NapCat/OneBot 侧和机器人账号具备撤回权限。",
+    "default": true
+  },
+  "mute_enabled": {
+    "description": "达到次数后禁言",
+    "type": "bool",
+    "hint": "需要机器人是群管理员。默认关闭，避免误伤。",
+    "default": false
+  },
+  "mute_seconds": {
+    "description": "禁言时长（秒）",
+    "type": "int",
+    "hint": "达到警告上限后的禁言时长，默认 600 秒。",
+    "default": 600
+  },
+  "warning_template": {
+    "description": "警告文案",
+    "type": "string",
+    "hint": "支持变量：{user} {user_id} {group_id} {reason} {count} {limit}",
+    "default": "⚠️ 请勿发送广告/外链。\n用户：{user}\n原因：{reason}\n警告次数：{count}/{limit}"
+  },
+  "mute_template": {
+    "description": "禁言文案",
+    "type": "string",
+    "hint": "支持变量：{user} {user_id} {group_id} {limit} {mute_seconds}",
+    "default": "🚫 {user} 已达到 {limit} 次警告，已尝试禁言 {mute_seconds} 秒。"
+  }
+}

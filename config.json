@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "group_whitelist": [],
+  "user_whitelist": [],
+  "ignore_admin": true,
+  "detect_links": true,
+  "detect_keywords": true,
+  "custom_keywords": [],
+  "allowed_domains": [],
+  "warning_limit": 3,
+  "warning_reset_seconds": 86400,
+  "recall_message": true,
+  "mute_enabled": false,
+  "mute_seconds": 600,
+  "warning_template": "⚠️ 请勿发送广告/外链。\n用户：{user}\n原因：{reason}\n警告次数：{count}/{limit}",
+  "mute_template": "🚫 {user} 已达到 {limit} 次警告，已尝试禁言 {mute_seconds} 秒。"
+}
